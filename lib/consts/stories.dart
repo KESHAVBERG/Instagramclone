@@ -42,3 +42,22 @@ Container storiesView() {
     ),
   );
 }
+
+
+Container storiesToView(context){
+  return  Container(
+    height: 100,
+    width: MediaQuery.of(context).size.width,
+    padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+    child: ListView(
+      shrinkWrap: true,
+      scrollDirection: Axis.horizontal,
+      children: [
+        storiesView(),
+        storiesView(),
+        storiesView(),
+        storiesView(),
+      ],
+    ),
+  );
+}

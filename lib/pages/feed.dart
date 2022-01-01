@@ -14,25 +14,70 @@ class _FeedState extends State<Feed> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar:BottomAppBar(
-        child: Row(
-          children: [
-            Icon(Icons.home,color: Colors.black,)
-          ],
+      bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const Icon(
+                Icons.home,
+                color: Colors.black,
+                size: 30,
+              ),
+              const Icon(
+                Icons.search,
+                color: Colors.black,
+                size: 30,
+              ),
+              Container(
+                height: 30,
+                width: 30,
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("imgs/reelsiconpng.png"))),
+              ),
+              const Icon(
+                Icons.favorite_border,
+                color: Colors.black,
+                size: 30,
+              ),
+              Container(
+                height: 50,
+                width: 50,
+                decoration:const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    fit: BoxFit.fill,
+                    image: AssetImage("imgs/userprofilepic.jpg")
+                  )
+                ),
+              )
+            ],
+          ),
         ),
       ),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0.0,
-        title: Image.asset("imgs/icon.png",height: 50,),
+        title: Image.asset(
+          "imgs/icon.png",
+          height: 50,
+        ),
         actions: const [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: Icon(MyFlutterApp.plus_squared_alt, color: Colors.black,),
+            child: Icon(
+              MyFlutterApp.plus_squared_alt,
+              color: Colors.black,
+            ),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: Icon(MyFlutterApp.facebook_messenger, color: Colors.black,),
+            child: Icon(
+              MyFlutterApp.facebook_messenger,
+              color: Colors.black,
+            ),
           )
         ],
       ),
@@ -41,22 +86,8 @@ class _FeedState extends State<Feed> {
         width: MediaQuery.of(context).size.width,
         child: ListView(
           children: [
-            Container(
-              height: 100,
-              width: MediaQuery.of(context).size.width,
-              padding: EdgeInsets.fromLTRB(8,0,0,0),
-              child: ListView(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                children: [
-                  storiesView(),
-                  storiesView(),
-                  storiesView(),
-                  storiesView(),
+            storiesToView(context),
 
-                ],
-              ),
-            )
           ],
         ),
       ),
