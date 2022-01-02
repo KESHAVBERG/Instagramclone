@@ -66,14 +66,14 @@ class _FeedState extends State<Feed> {
         ),
         actions: const [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            padding: EdgeInsets.symmetric(horizontal: 3.0),
             child: Icon(
               MyFlutterApp.plus_squared_alt,
               color: Colors.black,
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
+            padding: EdgeInsets.symmetric(horizontal: 15.0),
             child: Icon(
               MyFlutterApp.facebook_messenger,
               color: Colors.black,
