@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:functionlearner/consts/stories.dart';
 import 'package:functionlearner/my_flutter_app_icons.dart';
@@ -12,6 +13,7 @@ class Feed extends StatefulWidget {
 class _FeedState extends State<Feed> {
   @override
   Widget build(BuildContext context) {
+    final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
       bottomNavigationBar: BottomAppBar(
@@ -45,13 +47,11 @@ class _FeedState extends State<Feed> {
               Container(
                 height: 50,
                 width: 50,
-                decoration:const BoxDecoration(
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage("imgs/userprofilepic.jpg")
-                  )
-                ),
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage("imgs/userprofilepic.jpg"))),
               )
             ],
           ),
@@ -84,13 +84,18 @@ class _FeedState extends State<Feed> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: ListView(
-          children: [
-            storiesToView(context),
+          child: ListView(
+            children: [
+              storiesToView(context),
+              Container(
+                height: 350,
+                width: MediaQuery.of(context).size.width,
+                color: Colors.green,
+              ),
+            ],
+          ),
 
-          ],
-        ),
-      ),
+      )
     );
   }
 }
