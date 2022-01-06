@@ -20,7 +20,7 @@ class _FeedState extends State<Feed> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Icon(
                 Icons.home,
@@ -64,7 +64,7 @@ class _FeedState extends State<Feed> {
           "imgs/icon.png",
           height: 50,
         ),
-        actions: const [
+        actions:  [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 3.0),
             child: Icon(
@@ -74,10 +74,16 @@ class _FeedState extends State<Feed> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15.0),
-            child: Icon(
-              MyFlutterApp.facebook_messenger,
-              color: Colors.black,
-            ),
+            child: Container(
+              height: 30,
+              width: 30,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.contain,
+                  image: AssetImage('imgs/messager icon.jpg')
+                )
+              ),
+            )
           )
         ],
       ),
