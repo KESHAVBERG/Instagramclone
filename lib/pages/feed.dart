@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:functionlearner/consts/feedPosts.dart';
 import 'package:functionlearner/consts/stories.dart';
 import 'package:functionlearner/my_flutter_app_icons.dart';
 
@@ -90,13 +91,7 @@ class _FeedState extends State<Feed> {
           child: ListView(
             children: [
               storiesToView(context),
-              Container(
-                height: 350,
-                width: MediaQuery.of(context).size.width,
-                color: Colors.green,
-                child: const Text("Style",
-                    style: TextStyle(fontFamily: "Roboto", fontSize: 15)),
-              ),
+              postContainer(context),
             ],
           ),
         ));
