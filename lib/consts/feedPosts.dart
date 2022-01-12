@@ -9,7 +9,8 @@ Container postContainer(context){
       color: Colors.green,
       child: Column(
         children: [
-          FeedPostHeader(context)
+          FeedPostHeader(context),
+
         ],
       ),
     );

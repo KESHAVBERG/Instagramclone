@@ -96,21 +96,24 @@ Container storiesView(String imgPath, String userName) {
   );
 }
 
+List<Container> sv = <Container>[
+  storiesView("imgs/userprofilepic.jpg", "Your Story"),
+  storiesView("profilepics/p1.jpg", "TheRock"),
+  storiesView("profilepics/p2.jpg","Tom"),
+  storiesView("profilepics/p3.jpg","sr.keshav" ),
+  storiesView("profilepics/p1.jpg", "chrishemsworth"),
+  storiesView("profilepics/p2.jpg","chrisevans"),
+];
 Widget storiesToView(context) {
   return Container(
     padding:const EdgeInsets.fromLTRB(5, 0, 0, 0),
     width: double.infinity,
     height: 100,
-    child: ListView(
-      scrollDirection: Axis.horizontal,
-      children: [
-        storiesView("imgs/userprofilepic.jpg", "Your Story"),
-        storiesView("profilepics/p1.jpg", "TheRock"),
-        storiesView("profilepics/p2.jpg","Tom"),
-        storiesView("profilepics/p3.jpg","sr.keshav" ),
-        storiesView("profilepics/p1.jpg", "chrishemsworth"),
-        storiesView("profilepics/p2.jpg","chrisevans"),
-      ],
-    ),
+    child: ListView.builder(
+      itemCount: sv.length,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index){
+        return sv[index];
+        }),
   );
 }
