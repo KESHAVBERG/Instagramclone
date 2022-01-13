@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:functionlearner/consts/feedPosts.dart';
 import 'package:functionlearner/consts/stories.dart';
 import 'package:functionlearner/my_flutter_app_icons.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 class Feed extends StatefulWidget {
   const Feed({Key? key}) : super(key: key);
@@ -49,18 +48,20 @@ class _FeedState extends State<Feed> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: ListView(
+            shrinkWrap: true,
             children: [
               storiesToView(context),
-              postContainer(context),
+
+              postContainer(context, "sr.keshav", "profilepics/p2.jpg", "imgs/userprofilepic.jpg"),
+              postContainer(context, "sr.keshav", "profilepics/p2.jpg", "imgs/userprofilepic.jpg"),
+              postContainer(context, "sr.keshav", "profilepics/p2.jpg", "imgs/userprofilepic.jpg"),
+              postContainer(context, "sr.keshav", "profilepics/p2.jpg", "imgs/userprofilepic.jpg"),
+
+
+
             ],
           ),
         ));
   }
 }
-// Container(
-// height: 30,
-// width: 30,
-// decoration: const BoxDecoration(
-// image: DecorationImage(
-// image: AssetImage("imgs/reelsiconpng.png"))),
-// ),
+

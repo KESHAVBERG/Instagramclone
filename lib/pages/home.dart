@@ -103,7 +103,18 @@ class _HomeState extends State<Home> {
                       currentindex = 4;
                     });
                   },
-                  icon: Icon(Icons.person),
+                  icon: Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.blue,
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage('imgs/userprofilepic.jpg')
+                      )
+                    ),
+                  ),
                 ),
                 label: ''),
           ],
