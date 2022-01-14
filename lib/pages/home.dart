@@ -34,6 +34,7 @@ class _HomeState extends State<Home> {
       bottomNavigationBar: SizedBox(
         height: 60,
         child: BottomNavigationBar(
+          backgroundColor:currentindex == 2? Colors.black:Colors.white,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedLabelStyle: TextStyle(fontSize: 0),
@@ -42,28 +43,17 @@ class _HomeState extends State<Home> {
           currentIndex: currentindex,
           selectedItemColor: Colors.black,
           onTap: _onItemTapped,
-
           type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(
               icon: SizedBox(
-                child: IconButton(icon: Icon(Icons.home), onPressed: () {
-                  setState(() {
-                    currentindex = 0;
-                  });
-                }),
-                width: 38,
-                height: 38,
-              ),
-              label: "",
-            ),
-            BottomNavigationBarItem(
-              icon: SizedBox(
-                child: IconButton(icon: Icon(Icons.search), onPressed: () {
-                  setState(() {
-                    currentindex = 1;
-                  });
-                }),
+                child: IconButton(
+                    icon: currentindex != 0? Icon(Icons.home_outlined,color:currentindex == 2? Colors.white:Colors.black,):Icon(Icons.home),
+                    onPressed: () {
+                      setState(() {
+                        currentindex = 0;
+                      });
+                    }),
                 width: 38,
                 height: 38,
               ),
@@ -72,7 +62,21 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(
               icon: SizedBox(
                 child: IconButton(
-                    icon: Image.asset("imgs/reelsiconpng.png"),
+                    icon: Icon(Icons.search, color:currentindex == 2? Colors.white: Colors.black,),
+                    onPressed: () {
+                      setState(() {
+                        currentindex = 1;
+                      });
+                    }),
+                width: 38,
+                height: 38,
+              ),
+              label: "",
+            ),
+            BottomNavigationBarItem(
+              icon: SizedBox(
+                child: IconButton(
+                    icon:currentindex == 2? Image.asset("imgs/ricon.png"): Image.asset("imgs/reelsiconpng.png"),
                     onPressed: () {
                       setState(() {
                         currentindex = 2;
@@ -86,11 +90,14 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(
               icon: SizedBox(
                 child: IconButton(
-                    icon:currentindex == 3? Icon(Icons.favorite):Icon(Icons.favorite_border), onPressed: () {
-                  setState(() {
-                    currentindex = 3;
-                  });
-                }),
+                    icon: currentindex == 3
+                        ? Icon(Icons.favorite)
+                        : Icon(Icons.favorite_border, color:currentindex == 2? Colors.white: Colors.black,),
+                    onPressed: () {
+                      setState(() {
+                        currentindex = 3;
+                      });
+                    }),
                 width: 38,
                 height: 38,
               ),
@@ -107,13 +114,12 @@ class _HomeState extends State<Home> {
                     height: 50,
                     width: 50,
                     decoration: BoxDecoration(
-                      color: Colors.blue,
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        fit: BoxFit.fill,
-                        image: AssetImage('imgs/userprofilepic.jpg')
-                      )
-                    ),
+                        color: Colors.blue,
+                        shape: BoxShape.circle,
+                        border:currentindex == 4? Border.all(color: Colors.black,width: 2):null,
+                        image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage('imgs/userprofilepic.jpg'))),
                   ),
                 ),
                 label: ''),
@@ -124,4 +130,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
