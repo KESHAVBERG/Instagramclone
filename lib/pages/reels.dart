@@ -20,31 +20,43 @@ class _ReelsState extends State<Reels> {
           controller: controller ,
           scrollDirection: Axis.vertical,
           children: [
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              color: Colors.blue,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Column(
-                    children: [
-                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border)),
-                      IconButton(onPressed: (){}, icon: Image.asset("imgs/comment.png")),
-                      IconButton(onPressed: (){}, icon: Image.asset("imgs/send.png", width: 25,)),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.more_vert_sharp)),
+            Stack(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  color: Colors.blue,
+                ),
+                Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.height,
+                    margin: EdgeInsets.fromLTRB(0,MediaQuery.of(context).size.height*0.50,0,0),
+                    color: Colors.green,
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width*0.25,
+                            color: Colors.orange,
+                            child: Column(
+
+                              children: [
+                                IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border)),
+                                IconButton(onPressed: (){}, icon: Image.asset("imgs/comment.png")),
+                                IconButton(onPressed: (){}, icon: Image.asset("imgs/send.png", width: 25,)),
+                                IconButton(onPressed: (){}, icon: Icon(Icons.more_vert_sharp)),
 
 
 
-                    ],
-                  )
-                ],
-              )
-            ],
-          )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    )
+                ),
+              ],
             ),
             Container(
               width: MediaQuery.of(context).size.width,
